@@ -43,3 +43,5 @@ function func(a , b) {
 // console.log(obj1 === obj2
 
 
+
+

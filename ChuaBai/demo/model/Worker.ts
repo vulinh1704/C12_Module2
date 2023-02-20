@@ -16,3 +16,4 @@ export class Worker extends Person {
         this._level = value;
     }
 }
+

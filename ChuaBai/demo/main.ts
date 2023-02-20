@@ -6,6 +6,7 @@ import {Worker} from "./model/Worker";
 // @ts-ignore
 let input = require('readline-sync');
 let personManager = new PersonManager();
+
 function showMainMenu() {
     let choice = -1;
     do {
@@ -43,6 +44,7 @@ function addPerson() {
     let age = +input.question('Enter age: ')
     let level = input.question('Enter level : ');
     let worker: Worker = new Worker(id, fullName, sex, age, level);
+    console.log(worker, '47');
     personManager.add(worker);
     console.log('Thêm thành công !');
 }
@@ -53,4 +55,3 @@ function showPersons() {
 }
 
 showMainMenu()
-
