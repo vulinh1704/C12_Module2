@@ -2,27 +2,26 @@ import {Person} from "../model/Person";
 import {IManager} from "./IManager";
 
 export class PersonManager implements IManager<Person> {
-    private people: Person[];
+    private people: Map<number, Person>
 
     constructor() {
-        this.people = [];
+        this.people = new Map<number, Person>();
     }
 
     add(t: Person): void {
-        this.people.push(t);
+        this.people.set(t.id, t);
     }
 
     findAll(): Person[] {
-        return this.people;
+        return Array.from(this.people.values())
     }
 
     findById(id: number): Person | null {
-        for (let i = 0; i < this.people.length; i++) {
-            if (this.people[i].id == id) {
-                return this.people[i];
-            }
-        }
-        return null;
+        return this.people.get(id);
+    }
+
+    remove(id: number): void {
+        this.people.delete(id);
     }
 
 }
