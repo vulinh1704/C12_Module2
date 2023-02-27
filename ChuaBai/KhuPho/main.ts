@@ -1,9 +1,10 @@
 import {Street} from "./Street";
 import {Family} from "./Family";
-import {channel} from "diagnostics_channel";
 import {Person} from "./Person";
 
+
 let input = require('readline-sync');
+const chalk = require('chalk');
 
 let street = new Street(1, 'Hà Nội');
 
@@ -114,5 +115,5 @@ function searchPerson() {
         console.log('Không tìm thấy')
     }
 }
-
+console.log(chalk.red('Welcome to the app!'));
 main();
